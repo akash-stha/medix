@@ -1,0 +1,326 @@
+body{
+    margin: 0px auto;
+    padding: 0px auto;
+    height: 100% auto;
+    width:auto;
+    min-width: 400px;
+}
+h3{
+    padding-top: 0%;
+    /* color: rgba(6, 57, 79, 0.96); */
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+div{
+    display: block;
+}
+
+a.link{
+    text-decoration: none;
+}
+a.link2{
+    text-decoration: none;
+}
+#form-container{
+    padding-top: 2%;
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+form.example-form{
+    color:rgba(17, 137, 189, 0.96);
+    font-size: 95%;
+}
+#search-input{
+    color:rgba(17, 137, 189, 0.96);
+    border: 1px solid rgba(10, 116, 162, 0.96);
+    border-radius: 0px;
+}
+.pointer{
+    cursor: pointer;
+}
+.btn-group{
+    color: rgba(6, 57, 79, 0.96);
+    height:auto ;
+    width:auto;
+    border:none;
+}
+.bttn{
+    color: white;
+}
+.bttn:hover{
+    border:1px solid rgba(24, 100, 133, 0.727);
+}
+#row-block-container{
+    height: auto;
+    margin-top: 5%;
+}
+.link-for-modal{
+    text-decoration: none;
+}
+.blk{
+    height: 100%;
+    border: 1px solid white;
+    text-align: center;
+}
+.blk:hover{
+    border:1px solid rgb(218, 215, 215);
+   
+}
+.blk1{
+    margin-top:10%;
+}
+.blk-icon{
+    height: 40%;
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 3%;
+}
+.small-text{
+    color:grey;
+}
+#colomn-block-container{
+    height: 180px;
+}
+#footer{
+    text-align: center;
+    color:rgba(36, 103, 131, 0.96);
+    margin-top: 1.5%;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
+}
+#logo-container{
+    padding-left:8%;
+}
+.modal-dialog{
+    background-color:white;
+    width: 90%;
+    height: 90%;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
+}
+.modal-content{
+    border: none;
+    border-radius: none;
+    height: 100%;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
+}
+.modal-title{
+    text-align: center;
+    height:10%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:160%;
+    font-weight: 500;
+    color: rgba(11, 98, 135, 0.96);
+}
+.modal-body{
+    color:rgba(11, 98, 135, 0.96);
+    position: relative;
+    height: 80%;
+}
+.modal{
+    height:100%;
+}
+.modal-footer{
+    position: relative;
+    
+}
+.modal-img{
+    height: 100%;
+}
+.sml-txt{
+    border-bottom: 2px solid grey; 
+}
+.sml-txt:hover{
+    padding-bottom: 0.2%;
+    border-bottom: 2px solid rgba(11, 98, 135, 0.96);
+    color: rgba(11, 98, 135, 0.96);
+}
+.modal-para{
+    color: rgba(6, 87, 119, 0.96);
+    font-size: 130%;
+    font-weight: 600;
+    text-align: center;
+}
+.modal-para1{
+    padding-top: 15%;
+    color: rgba(6, 87, 119, 0.96);
+    font-size: 130%;
+    font-weight: 600;
+    text-align: center;
+}
+.modal-para3{
+    text-align: center;
+    font-size: 160%;
+    padding-top: 3%;
+    font-weight: 500;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.inside-para3{
+    font-size: 80%;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.picture{
+    border:1px dashed white;
+    height: 99%;
+}
+.picture:hover{
+    border: 1px dashed rgb(162, 160, 160);
+    background-color: rgba(248, 244, 244, 0.357);
+}
+.img-circle{
+    height: 100%;
+    background-color:rgb(150, 192, 150);
+}
+.div-img{
+    margin-left: 33%;
+    margin-top:4%;
+    height: 27%;
+}
+h5.name{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:130%;
+    font-weight: 100;
+    margin-top: 4%;
+    color: rgb(5, 54, 77);
+}
+.team-media{
+    height: 10%;
+    background-color: blue;
+    margin-top:10%;
+}
+.intro{
+    margin-top: 12%;
+    text-align: center;
+    height: 51%;
+    color:rgba(9, 69, 73, 0.782);
+    font-size: 120%;
+    font-weight: 400;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+input.form-control{
+    border-radius: 0%;
+    color:rgba(11, 98, 135, 0.96);
+}
+textarea.form-control{
+    border-radius: 0%;
+    color: rgba(11, 98, 135, 0.96);
+}
+button.bl-bt{
+    border-radius: 0%;
+}
+.text{
+    margin-top: 3%;
+    font-size: 120%;
+    height: 80%;
+    border-right: 1px solid rgba(196, 195, 195, 0.863);
+}
+.patient{
+    margin-top: 20%;
+    border-radius: 0px;
+    margin-left: 12%;
+    width: 35%;
+}
+.hospital{
+    margin-top: 3%;
+    border-radius: 0px;
+    margin-left: 6%;
+    width: 40%;
+}
+.pharma{
+    margin-top: 28%;
+    border-radius: 0px;
+    margin-left: 6%;
+    width: 40%;
+}
+/* Style for media query */
+@media(max-width:500px){
+    #logo-container{
+        padding-left: 5%;
+    }    
+}
+
+/* Style for the account section of patient */
+.sr-container{
+    /* display: none; */
+    margin-top: 2.2%;
+}
+.row{
+    width: 101%;
+}
+.login-div-hosp{
+    margin-top: -1.45%;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    /* background-color: rgba(240, 255, 255, 0.432); */
+    background-color: rgba(235, 143, 143, 0.158);
+}
+.login-div-pharma{
+    margin-top: -1.45%;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    /* background-color: rgba(240, 255, 255, 0.432); */
+    background-color: rgba(178, 143, 235, 0.527);
+}
+.login-div-doctor{
+    margin-top: -1.45%;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    /* background-color: rgba(240, 255, 255, 0.432); */
+    background-color: rgba(247, 154, 216, 0.459);
+}
+.login-div-patient{
+    margin-top: -1.45%;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    /* background-color: rgba(240, 255, 255, 0.432); */
+    background-color: rgba(143, 235, 178, 0.397);
+}
+.login-form-patient{
+    margin-top:1%;
+    padding-left:8%;
+    padding-right: 2%;
+}
+.btn{
+    border-radius: 0%;
+}
+.btn-register-now{
+    margin-left: -10%;
+    margin-top: 40%; 
+}
+.btn-login-now{
+    margin-top: 60%;
+    margin-left:-10%;
+}
+.right-section{
+    margin-top: 1%;
+    margin-left: 0%;
+    margin-bottom: 1%;
+    width: 55%;
+    padding-left: 5%;
+    border-left:1px solid rgb(202, 202, 202);
+}
+.patient{
+    margin-top: 1%;
+    background-image: url('/img/users/patient.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fixed;
+}
+.pharmacy{
+    /* margin-top: 1%; */
+    background-image: url('/img/users/pharmacy.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.hospital{
+    margin-top: 1%;
+    background-image: url('/img/users/hospital.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.doctor{
+    margin-top: 1%;
+    background-image: url('/img/users/doctor.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

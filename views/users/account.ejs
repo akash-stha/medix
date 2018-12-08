@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <% if(NotFoundMsg && NotFoundMsg.length > 0){%>
+                <div class="alert alert-danger text-center" style="margin-top:1%;font-size:90%"><p><%= NotFoundMsg%></p></div>
+            <%}%>
+            <% if(WelcomeMsg && WelcomeMsg.length > 0) { %>
+                <div class="alert alert-info text-center" style="margin-top:1%;font-size:90%"><p><%=WelcomeMsg%></p></div>
+            <%}%>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="text-center" style="height:100px;margin-top:1%">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="logo-container" style="height:100%;margin-left:35%">
+                       <a href="/"><img src="/img/1st.png" alt="Hospitant" height="100%" width="auto"></a>
+                       <h3>Account Section</h3> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            <div class="row" style="width:80%;margin-left:9%">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="colomn-block-container">
+                                <!---div for the link of the Patient Section-->
+                                    <a href="/account/patient">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk1">
+                                                <div class="blk-icon">
+                                                    <img src="/img/hospitant.png" alt="Account" height="100%" width="40%">
+                                                </div>
+                                                <strong>Patient Section</Strong><br>
+                                                <small class="small-text">About Hospitant, Features and Services</small>
+                                        </div>
+                                    </a>
+                                <!-- Div for the link of the hospital account section -->
+                                    <a href="/account/hospital">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk1">
+                                            <div class="blk-icon">
+                                                <img src="/img/nearesthospital.png" alt="Account" height="100%" width="40%" style="margin-top:2%">
+                                            </div>
+                                            <strong>Hospital Section</strong><br>
+                                            <small class="small-text">Find Hospital Near By Using Gps System</small>
+                                        </div>
+                                    </a>
+                                <!-- Div for containing the link of the account section of pharmacy -->
+                                    <a href="/account/pharmacy">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk1">
+                                            <div class="blk-icon">
+                                                <img src="/img/best-hospital.png" alt="Account" height="100%" width="40%">    
+                                            </div>
+                                            <strong>Pharmacy Section</Strong><br>
+                                            <small class="small-text">Best Hospital to cure,Good services</small>
+                                        </div>
+                                    </a>
+                                <!-- Div containing the link of the account section of doctors -->
+                                <a href="/account/doctor">    
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk1">
+                                        <div class="blk-icon">
+                                            <img src="/img/accnt.png" alt="Account" height="100%" width="40%" style="margin-left:4%">
+                                        </div>
+                                        <strong>Doctors section</Strong><br>
+                                        <small class="small-text">Create Your Account As Hospital,Clinic or Pharmacy</small>
+                                    </div><br>
+                                </a>
+                    </div>
+            </div>
+    </div>
+</body>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/jquery-3.1.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <% if(errors && errors.length > 0) { %>
+          <% errors.forEach(function(error){ %>
+              <div class="alert-danger">
+                <%=error.msg %>
+              </div>
+          <% }); %>
+        <% } %>
+        
+        <% if(msg && msg.length > 0) { %>
+          <div class="alert alert-danger"><p><%= msg %></p></div>
+        <% } %>
+    </div>
+   <div class="container">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="height:100px;margin-left:44%">
+            <a class="homepage" href="/"><img src="/img/1st.png" alt="Hospitant" height="100%" width="auto"></a>
+        </div>
+        <div class="row">
+           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 login-form">
+                <h4 class="page-header">!! Connect with Patients and Hospitals through Hospitant !!</h4>
+                    <form method="post" action="/users/register-pharma">
+                        <div class="form-group">
+                          <label>Name of the Pharmacy/Clinic</label>
+                          <input type="text" class="form-control"  placeholder="Name of the pharmacy/clinic" name="pharma_name" required>
+                        </div>
+                        <div class="form-group">
+                          <label>Enter the Exact Location of Pharmacy/Clinic</label>
+                          <input type="text" class="form-control"  placeholder="Enter exact location of Pharmacy/Clinic" name="pharma_address" optional>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Phone Number</label>
+                            <input type="text" class="form-control"  placeholder="Enter valid phone number" name="pharma_phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mail address of Pharmacy/Clinic</label>
+                            <input type="text" class="form-control"  placeholder="Mail address" name="pharma_mail" required>
+                        </div>
+                        <div class="form-group">
+                          <label>Password</label>
+                          <input type="password" class="form-control"  placeholder="Password" name="pharma_password1" required>
+                        </div>
+                        <div class="form-group">
+                          <label>Confirm Password</label>
+                          <input type="password" class="form-control"  placeholder="Confirm password" name="pharma_password2" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary active" style="border-radius:0%">Register</button>
+                    </form>
+           </div>
+       </div>
+       <div class="row">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 register-section">
+               <h4 class="page-header">Register as Different !!</h4>
+          </div>
+        </div>   
+        <div class="register-btn">
+            <ul class="list-inline list-register">
+              <li class="reg-list">
+                <form action="/users/register-patient">
+                  <button class="btn btn-primary btn-md active reg">Register As Patient</button>
+                </form>
+              </li>
+              <li class="reg-list" style="padding-left:25%;width:52.5%">
+                  <form action="/users/register-hospital">
+                    <button class="btn btn-primary btn-md active reg">Register As Hospital</button>
+                  </form>
+              </li>
+            </ul>
+        </div>
+        <div class="footer" style="text-align:center">
+          <p class="footer-text">
+              Copyright &copy 2017 || <a href="/" style="text-decoration:none">Hospitant</a>
+          </p>
+        </div>
+    </div>
+   </div>
+</body>
+</html>

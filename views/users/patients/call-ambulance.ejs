@@ -1,0 +1,122 @@
+<% include ../../partials/header-profile %>
+<body>
+<div style="width:100%">
+        <div id="side_dash">
+                <div class="box" id="logo-box">
+                    <a href="/users/patients/home"><img id="hospitant-logo" src="/img/1st.png" height="100%" alt="Hospitant"></a>
+                </div>
+
+                <div class="box" id="nearest-hospital1">
+                </div>
+                <div class="box" id="nearest-hospital">
+                    <a  class="link-dash-text" href="/nearest-hospital"><img class="img" src="/img/nearesthospital.png" height="80%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:0%">Nearest hospital</h5>
+                    </a>
+                </div>
+                <div class="box" id="call-ambulance">
+                    <a class="link-dash-text" href="/users/patients/call-ambulance"><img class="img" src="/img/ambulance.png" height="100%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:3%">Call Ambulance</h5>
+                    </a>
+                </div>
+                <div class="box" id="your-hospital">
+                    <a class="link-dash-text" href="/users/patients/linked-hospitals"><img class="img" src="/img/accnt.png" height="100%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:0.5%">Your Hospitals</h5>
+                    </a>
+                </div>
+                <div class="box" id="best-hospital">
+                    <a class="link-dash-text" href="/users/patients/best-hospitals"><img class="img" src="/img/best-hospital.png" height="100%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:4%" >Best Hospital</h5>
+                    </a>
+                </div>
+                <div class="box" id="nearest-pharma">
+                    <a class="link-dash-text" href="/users/patients/nearest-pharmacy"><img class="img" src="/img/pharmacy-1.png" height="100%" style="margin-left:15%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:1.5%">Nearest Pharmacy</h5>
+                    </a>
+                </div>
+                <div class="box" id="appoint-doctor">
+                    <a class="link-dash-text" href="/users/patients/appoint-doctor"><img class="img" src="/img/blog.png" height="100%" style="margin-left:27%" alt="Hospitant">
+                        <h5 class="dash-text" style="margin-top:2%">Appoint Doctor</h5>
+                    </a>
+                </div>
+                <div class="box" id="invest">
+                        <a class="link-dash-text" href="/users/patients/<%= user.username %>">
+                        <img class="img" src="/img/contribute.png" height="100%" style="margin-left:20%" alt="Hospitant">
+                            <h5 class="dash-text" style="margin-top:2%"><%= user.username %></h5>
+                        </a>
+                    
+                </div>
+            </div>
+    <div class="container" style="margin-right:0%">
+        
+    </div>
+    <div style="width:97%">
+            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 float-left" style="z-index:1;color:rgba(7, 58, 80, 0.932);height:38px;width:90.3%;margin-left:111px">  
+                        <div class="row">
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 top-home">
+                                <a href="/"><span class="glyphicon glyphicon-home" style="font-size:150%"></span></a>
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 top-logout">
+                                    <a href="/logout"><span class="glyphicon glyphicon-off" style="font-size:150%"></span></a>
+                            </div>
+                        </div>    
+                        
+                    </div>
+                    <form method="get" action="/users/patients/search">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group" style="width:92.4%">
+                                    <!-- Input Section -->
+                                        <input type="Search" style="color:rgba(7, 74, 102, 0.479);border-radius:0%" class="form-control" name="search" id="search-input" placeholder="Search hospital By" style="border-radius:0px">
+                                            <div class="input-group-btn">
+                                            <!--Division for the grouping buttons that contains dropdown value for selecting different attributes -->
+                                                <div class="btn-group">
+                                                    <button type="button" id="srch-val" name="search" class="btn btn-primary active dropdown-toggle 1 bttn" data-toggle="dropdown" >
+                                                        Select
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="menu1 pointer"><a>Names</a></li>
+                                                        <li class="menu1 pointer"><a>City</a></li>
+                                                        <li class="menu1 pointer"><a>District</a></li>
+                                                        <li class="menu1 pointer"><a>Regions</a></li>
+                                                        <li class="menu1 pointer"><a>Diseases Cured</a></li>
+                                                        <li class="menu1 pointer"><a>None</a></li>
+                                                    </ul>
+                                                    <script>
+                                                        $(".dropdown-menu li").click(function(){
+                                                            $(this).parents(".btn-group").find('.btn').html(
+                                                            $(this).text()+" <span class=\"caret\"></span>"
+                                                            );
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <!-- Division for groupting buttons which has dropdown value for viewing-->
+                                                <div class="btn-group">
+                                                    <button type="button" name="search" class="btn btn-primary active dropdown-toggle 2 bttn" data-toggle="dropdown">
+                                                        View
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="menu1 pointer"><a>Map</a></li>
+                                                        <li class="menu1 pointer"><a>List</a></li>
+                                                    </ul>
+                                                    <script>
+                                                        $(".dropdown-menu li").click(function(){
+                                                            $(this).parents(".btn-group").find('.btn').html(
+                                                            $(this).text()+" <span class=\"caret\"></span>"
+                                                            );
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <!-- Division for grouping buttons which has value for search button-->
+                                                <div class="btn-group">
+                                                    <input type="submit" class="btn btn-primary active  " style="border-radius:0%" value="Go">
+                                                </div>
+                                            </div>
+                                    </div>
+                        </div>
+                    </form>
+                </div>
+            
+    </div>
+</div>

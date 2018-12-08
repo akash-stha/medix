@@ -1,0 +1,49 @@
+body{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    font-size: 135%;
+}
+.container  {
+    margin-top: 2%;
+    color:rgba(7, 82, 109, 0.96);
+    font-weight: 100;
+    width: 80%;
+}
+.page-header{
+    text-align: center;
+}
+a.problem-link{
+    text-decoration: none;
+}
+.login-form{
+    margin-left: 17%;
+    margin-top:-2%;
+}
+.register-section{
+    margin-left: 17%;
+    color: rgba(184, 35, 67, 0.96);
+}
+
+.register-btn{
+    height: 100px;
+    width: 100%;
+}
+.list-register{
+    list-style: none;
+    margin-left: 17%;
+}
+.reg-list{
+    margin-top: 3.5%;
+    width: 23%;
+    margin-right: 5.5%;
+}
+.reg{
+    width: 100%;
+    border-radius: 0%;
+}
+input.form-control{
+    border-radius: 0%;
+}

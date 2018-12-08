@@ -1,0 +1,195 @@
+<% include partials/header %>
+<body>
+    <div class="row" style="width:100%">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <div style="height:70px">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="logo-container" style="height:100%;margin-left:20%;margin-top:5%">
+                   <a href="/"><img src="/img/1st.png" alt="Hospitant" height="100%" width="auto"></a> 
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 sr-container">
+            <form method="GET" action="/search">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="total-bar">
+                        <div class="input-group" style="width:100%">
+                            <!-- Input Section -->
+
+                                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Quick search || Search hospital By">
+                                    <div class="input-group-btn">
+                                        <!--Division for the grouping buttons that contains dropdown value for selecting different attributes -->
+                                        <div class="btn-group">
+                                            <button type="button" id="srch-val" name="search" class="btn btn-primary dropdown-toggle 1 bttn" data-toggle="dropdown" >
+                                                Select
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu1 pointer"><a>Names</a></li>
+                                                <li class="menu1 pointer"><a>City</a></li>
+                                                <li class="menu1 pointer"><a>District</a></li>
+                                                <li class="menu1 pointer"><a>Regions</a></li>
+                                                <li class="menu1 pointer"><a>Diseases Cured</a></li>
+                                                <li class="menu1 pointer"><a>None</a></li>
+                                            </ul>
+                                            <script>
+                                                $(".dropdown-menu li").click(function(){
+                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                    );
+                                                  });
+                                            </script>
+                                        </div>
+                                        <!-- Division for groupting buttons which has dropdown value for viewing-->
+                                        <div class="btn-group">
+                                            <button type="button" name="searchOption2" class="btn btn-primary dropdown-toggle 2 bttn" data-toggle="dropdown">
+                                                View
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu1 pointer"><a>Map</a></li>
+                                                <li class="menu1 pointer"><a>List</a></li>
+                                            </ul>
+                                            <script>
+                                                $(".dropdown-menu li").click(function(){
+                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                    );
+                                                  });
+                                            </script>
+                                        </div>
+                                        <!-- Division for grouping buttons which has value for search button-->
+                                        <div class="btn-group">
+                                            <input type="submit" class="btn btn-primary" style="border-radius:0%" value="Go">
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+            </div>
+        </form> 
+        </div>
+    </div>
+    <!-- Horizontal line -->
+    <hr>
+    <!-- map loading section  -->    
+    
+
+    <h3 class='text-center h3'> Hospitals Near You </h3>
+    <div id="map-wrapper">
+      <div id="map"></div>
+      </div>    
+
+      <style>
+            #map-wrapper{
+           height:75%;
+           width:100%;
+           margin:0px auto;
+           background-color: black;
+         }	
+         #map {
+           height: 100%;
+         }
+         html, body {
+           height: 100%;
+           margin: 0;
+           padding: 0;
+         }
+         .h3{
+           text-align:center;
+           color: #0d74ce;
+           margin-bottom: 20px;
+         }
+       </style>
+
+<script>
+        var map;           
+
+        function initMap() {
+
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 27.700769, lng: 85.300140},
+                zoom: 6,
+          types: ['hospital']
+              });
+
+
+          if (navigator.geolocation) {
+            try {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                var myLocation = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
+                setPos(myLocation);
+              });
+            } catch (err) {
+              var myLocation = {
+                lat: 23.8701334,
+                lng: 90.2713944
+              };
+              setPos(myLocation);
+            }
+          } else {
+            var myLocation = {
+              lat: 23.8701334,
+              lng: 90.2713944
+            };
+            setPos(myLocation);
+          }
+        }
+
+        function setPos(myLocation) {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: myLocation,
+            zoom: 13  
+          });
+
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: myLocation,
+            radius: 4000,
+            types: ['hospital', 'health']
+          }, processResults);
+
+        }
+
+        function processResults(results, status, pagination) {
+          if (status !== google.maps.places.PlacesServiceStatus.OK) {
+            return;
+          } else {
+            createMarkers(results);
+          }
+        }
+
+        function createMarkers(places) {
+          var bounds = new google.maps.LatLngBounds();
+          var placesList = document.getElementById('places');
+
+          for (var i = 0, place; place = places[i]; i++) {
+            var image = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            var marker = new google.maps.Marker({
+              map: map,
+              icon: image,
+              title: place.name,
+              animation: google.maps.Animation.DROP,
+              position: place.geometry.location
+            });
+
+            bounds.extend(place.geometry.location);
+          }
+          map.fitBounds(bounds);
+        }
+</script>
+
+<script
+src="https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true&key=AIzaSyBMbJUsODNGSyXbORp7YrHOFIrbsI-7IVg&&libraries=places" async defer>
+</script> 
+
+
+</body>

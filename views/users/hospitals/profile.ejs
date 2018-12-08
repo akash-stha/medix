@@ -1,0 +1,51 @@
+<% include ../../partials/hospital-header-profile%>
+<body>
+    <div id="hospital-profile-container">
+        <div class="row top-bar-hospital">
+            <%if(user){%>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 float-left text-center" style="padding-top:1.3%">
+                <a href="/users/patients/home" style="text-decoration:none"><h4><strong><span class="glyphicon glyphicon-home" style="font-size:150%"></span></strong></h4></a>
+            </div>
+            <%}%>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+               <a href="/"><img class="hospitant-logo" src="/img/1st.png" height="80px" width="70px"></a>
+            </div>
+            <%if(user){%>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 float-right text-center" style="padding-top:1.3%">
+                    <a href="/logout" style="text-decoration:none"><h4><strong><span class="glyphicon glyphicon-off" style="font-size:150%"></span></strong></h4></a>
+                </div>
+            <%}%>
+        </div>
+        <div class="row pic-container text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                Cover Pic here
+                <% if(!user){ %>
+                <span class="glyphicon glyphicon-edit" style="margin-left:90%;font-size:150%"></span>
+                <% } %>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 profile-pic-container">
+                <img src="/img/hospital.jpg" height="100%" width="136%" style="margin-left:-17%">
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 profile-info-container">
+                <h3 class="name-of-hospital"><a class="link" href="/users/hospitals/<%=hospital._id%>" style="text-decoration:none"><%=hospital.hospname%></a></h3>
+                <small><%=hospital.hospaddress%></small>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 call-button-container">
+                <button class="btn btn-primary active btn-call">Call</button>
+                <button class="btn btn-primary active btn-call">Message</button>
+                <button class="btn btn-primary active btn-call">Connect</button>
+            </div>
+        </div>
+
+            <div class="row info-section">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 review-div text-center">
+                    <h4>Reviews</h4>
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 info-div text-center">
+                    <h4>Basic Info</h4>
+                </div>
+            </div>
+            
+    </div>
+</body>
+</html>

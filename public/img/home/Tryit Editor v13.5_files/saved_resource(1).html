@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_popover_placement&stacked=h -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Bootstrap Example</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <script src="./jquery.min.js.download"></script>
+  <script src="./bootstrap.min.js.download"></script>
+</head>
+<body>
+
+<div class="container">
+  <h3>Popover Options</h3>
+  <p>The <strong>placement</strong> option specifies the popover position.</p>
+  <div>
+    <button class="btn btn-warning btn-md" data-original-title="" title="">Top</button>
+    <button class="btn btn-success btn-md" data-original-title="" title="">Bottom</button>
+    <button class="btn btn-danger btn-md" data-original-title="" title="">Left</button>
+    <button class="btn btn-default btn-md" data-original-title="" title="">Right</button>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('.btn-warning').popover({title: "Header", content: "Blabla", placement: "top"}); 
+    $('.btn-success').popover({title: "Header", content: "Blabla", placement: "bottom"}); 
+    $('.btn-danger').popover({title: "Header", content: "Blabla", placement: "left"}); 
+    $('.btn-default').popover({title: "Header", content: "Blabla", placement: "right"}); 
+});
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,123 @@
+<% include ../partials/header %>
+<body>
+    <div class="row" style="width:100%">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <div style="height:70px">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="logo-container" style="height:100%;margin-left:20%;margin-top:5%">
+                   <a href="/"><img src="/img/1st.png" alt="Hospitant" height="100%" width="auto"></a> 
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 sr-container">
+            <form method="GET" action="/search">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="total-bar">
+                        <div class="input-group" style="width:100%">
+                            <!-- Input Section -->
+                                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Quick search || Search hospital By">
+                                    <div class="input-group-btn">
+                                        <!--Division for the grouping buttons that contains dropdown value for selecting different attributes -->
+                                        <div class="btn-group">
+                                            <button type="button" id="srch-val" name="search" class="btn btn-primary dropdown-toggle 1 bttn" data-toggle="dropdown" >
+                                                Select
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu1 pointer"><a>Names</a></li>
+                                                <li class="menu1 pointer"><a>City</a></li>
+                                                <li class="menu1 pointer"><a>District</a></li>
+                                                <li class="menu1 pointer"><a>Regions</a></li>
+                                                <li class="menu1 pointer"><a>Diseases Cured</a></li>
+                                                <li class="menu1 pointer"><a>None</a></li>
+                                            </ul>
+                                            <script>
+                                                $(".dropdown-menu li").click(function(){
+                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                    );
+                                                  });
+                                            </script>
+                                        </div>
+                                        <!-- Division for groupting buttons which has dropdown value for viewing-->
+                                        <div class="btn-group">
+                                            <button type="button" name="searchOption2" class="btn btn-primary dropdown-toggle 2 bttn" data-toggle="dropdown">
+                                                View
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li class="menu1 pointer"><a>Map</a></li>
+                                                <li class="menu1 pointer"><a>List</a></li>
+                                            </ul>
+                                            <script>
+                                                $(".dropdown-menu li").click(function(){
+                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                    );
+                                                  });
+                                            </script>
+                                        </div>
+                                        <!-- Division for grouping buttons which has value for search button-->
+                                        <div class="btn-group">
+                                            <input type="submit" class="btn btn-primary" style="border-radius:0%" value="Go">
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+            </div>
+        </form> 
+        </div>
+    </div>
+    <!-- Horizontal line -->
+    <hr>
+    <div>
+        <div class="row">
+          <div class="login-div-hosp" id="register-contain">
+                <div class="container text-center" style="margin-top:0%">
+                </div>
+                <div class="row">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 login-form login-form-patient">
+                            <h4 class="page-header">Hospital || Register section</h4>
+                            <form method="post" action="/users/register-hospital/">
+                                <div class="form-group">
+                                  <label>Enter Name of Hospital</label>
+                                  <input type="text" id="hospname" class="form-control"  placeholder="Name of hospital" name="hospname">
+                                </div>
+                                <div class="form-group">
+                                  <label>Enter valid address</label>
+                                  <input type="text" class="form-control"  placeholder="Enter address of hospital" name="hospaddress">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone number</label>
+                                    <input type="number" class="form-control"  placeholder="Enter phone number" name="hospphone">
+                                  </div>
+                                <div class="form-group">
+                                  <label>Enter valid email</label>
+                                  <input type="email" class="form-control"  placeholder="Enter valid email of hospital" name="hospemail">
+                                </div>
+                                <div class="form-group">
+                                  <label>Password</label>
+                                  <input type="password" class="form-control"  placeholder="Enter password" name="hosppassword">
+                                </div>
+                                <div class="form-group">
+                                  <label>Confirm Password</label>
+                                  <input type="password" class="form-control"  placeholder="Re-enter password" name="hosppassword2">
+                                </div>
+                                <button type="submit" class="btn btn-primary active" style="border-radius:0%">Register</button>
+                            </form>
+                    </div>
+                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 right-section hospital">
+                        <div class="text-center" style="margin-top:2%">
+                            <h3 class="hospital-text">We Connect you with your hospitals, pharmacy and Doctors</h3>
+                            <a href="/account/hospital">
+                                <button class="btn btn-primary btn-login-now" id="hide-register" style="margin-top:73%">
+                                    Already registered, login now
+                                </button>
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

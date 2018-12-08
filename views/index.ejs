@@ -1,0 +1,321 @@
+<% include ./partials/header %>
+<body>
+<div id="loader">
+</div>
+<div id="myDiv" class="animateBottom">
+    <div class="container">
+        <div class="text-center">
+            <% if(NotFoundMsg && NotFoundMsg.length > 0){%>
+                <div class="alert alert-danger text-center" style="margin-top:1%;font-size:90%"><p><%= NotFoundMsg%></p></div>
+            <%}%>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div style="height:100px;margin-top:2%">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="logo-container" style="height:100%;margin-left:35%">
+                       <a href="/"><img src="/img/1st.png" alt="Hospitant" height="80%" width="auto"></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">    
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+                <div class="container" id="top-div">
+                    <div id="form-container" class="center-block" style="margin-left:13.2%">
+                        <form method="GET" action="/search">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="total-bar">
+                                        <div class="input-group" style="width:100%">
+                                            <!-- Input Section -->
+                                                    <input type="text" class="form-control" name="search" id="search-input" placeholder="Search hospital By">
+                                                    <div class="input-group-btn">
+                                                        <!--Division for the grouping buttons that contains dropdown value for selecting different attributes -->
+                                                        <div class="btn-group">
+                                                            <button type="button" id="srch-val" name="search" class="btn btn-primary dropdown-toggle 1 bttn" data-toggle="dropdown" >
+                                                                Select
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="menu1 pointer"><a>Names</a></li>
+                                                                <li class="menu1 pointer"><a>City</a></li>
+                                                                <li class="menu1 pointer"><a>District</a></li>
+                                                                <li class="menu1 pointer"><a>Regions</a></li>
+                                                                <li class="menu1 pointer"><a>Diseases Cured</a></li>
+                                                                <li class="menu1 pointer"><a>None</a></li>
+                                                            </ul>
+                                                            <script>
+                                                                $(".dropdown-menu li").click(function(){
+                                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                                    );
+                                                                  });
+                                                            </script>
+                                                        </div>
+                                                        <!-- Division for groupting buttons which has dropdown value for viewing-->
+                                                        <div class="btn-group">
+                                                            <button type="button" name="searchOption2" class="btn btn-primary dropdown-toggle 2 bttn" data-toggle="dropdown">
+                                                                View
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="menu1 pointer"><a>Map</a></li>
+                                                                <li class="menu1 pointer"><a>List</a></li>
+                                                            </ul>
+                                                            <script>
+                                                                $(".dropdown-menu li").click(function(){
+                                                                    $(this).parents(".btn-group").find('.btn').html(
+                                                                    $(this).text()+" <span class=\"caret\"></span>"
+                                                                    );
+                                                                  });
+                                                            </script>
+                                                        </div>
+                                                        <!-- Division for grouping buttons which has value for search button-->
+                                                        <div class="btn-group">
+                                                            <input type="submit" class="btn btn-primary" style="border-radius:0%" value="Go">
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </form>    
+                            <div class="row" id="row-block-container" style="height:360px;">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="colomn-block-container">
+                                    <!---div for the hospitant-->
+                                        <a data-toggle="modal" href="#modal-about">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                                    <div class="blk-icon">
+                                                        <img src="/img/hospitant.png" alt="Account" height="100%" width="45%">
+                                                    </div>
+                                                    <strong>Hospitant</Strong><br>
+                                                    <small class="small-text">About Hospitant, Features and Services</small>
+                                            </div>
+                                        </a>
+                                    <!-- Modal for the link hospitant -->
+                                        <div class="modal fade" id="modal-about">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button class="close" type="button" data-dismiss="modal" >&times;</button>
+                                                        <h4 class="modal-title">
+                                                            Hospitant || <a class="link2" href="#modal-about"><small class="sml-txt">About</small></a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="modal-para">
+                                                                Hospitant is the one way of connecting patients with Hospitals and pharmacies with better information and services of the 
+                                                                hospitals.Each user can See all the services of hospital and pharmacies and order the medicine from the pharmacy where they want.
+                                                        </p>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 float-left text" >
+                                                            <p class="modal-para1">
+                                                                Patient can  create their profile and save record digitally.
+                                                            </p>
+                                                            <a href="/login"><button class="btn btn-primary active patient"  style="margin-top:30%;">Login here</button></a>
+                                                            <a href="users/register-patient"><button class="btn btn-primary active patient" style="margin-top:30%">Register as Patient</button></a>
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 float-left text" >
+                                                                <p class="modal-para1">
+                                                                    Patient can  create their profile and save record digitally.
+                                                                </p>
+                                                                <a href="/login"><button   style="margin-top:30%;" class="btn btn-primary active hospital">Login here</button></a>
+                                                                <a href="users/register-hospital"><button class="btn btn-primary active hospital">Register as hospital</button></a>
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 float-left text" >
+                                                                <p class="modal-para1">
+                                                                    
+                                                               <a href="/login"><button class="btn btn-primary active pharma">Login here</button></a> 
+                                                                <a href="users/register-pharma"><button class="btn btn-primary active pharma">Register as Pharmacy</button></a>
+                                                        </div>
+                                                    </div>
+                                                    <!--div for the footer of the modal-->
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-dismiss="modal" class="btn btn-primary bl-bt">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- link for modal Nearest Hospitals -->
+                                        <a data-toggle="modal" href="/nearest-hospital">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                                <div class="blk-icon">
+                                                    <img src="/img/nearesthospital.png" alt="Account" height="100%" width="45%" style="margin-top:2%">
+                                                </div>
+                                                <strong>Nearest Hospital</strong><br>
+                                                <small class="small-text">Find Hospital Near By Using Gps System</small>
+                                            </div>
+                                        </a>
+                                    
+                                    <!-- Link for the modal for Best hospitals -->
+                                        <a data-toggle="modal" href="/best-hospital">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                                <div class="blk-icon">
+                                                    <img src="/img/best-hospital.png" alt="Account" height="100%" width="45%">    
+                                                </div>
+                                                <strong>Best Hospitals</Strong><br>
+                                                <small class="small-text">Best Hospital to cure,Good services</small>
+                                            </div>
+                                        </a>
+                                    <!-- div for the modal -->
+                                    <div class="modal fade" id="modal-best">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" type="button" data-dismiss="modal" >&times;</button>
+                                                    <h4 class="modal-title">
+                                                        Hospitant || <a class="link2" href="/"><small class="sml-txt">Best Hospital for Best Services</small></a>
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text" >
+                                                                <p class="modal-para3">
+                                                                    User could review particular hospital according to their services<br><br>
+                                                                    <small class="inside-para3">Note: You need to login for rating hospital and get records from your connected hospitals</small> 
+                                                                </p>
+                                                                
+                                                                <a href="/login"><button class="btn btn-primary active patient">Login here</button></a>
+                                                                <a href="users/register-hospital"><button class="btn btn-primary active patient">Register as patient</button></a>
+                                                        </div>
+                                                </div>
+                                                <!--div for the footer of the modal-->
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary bl-bt">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End of the division for the modal-->
+                                    <a data-toggle="modal" href="/account">    
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                            <div class="blk-icon">
+                                                <img src="/img/accnt.png" alt="Account" height="100%" width="45%" style="margin-left:4%">
+                                            </div>
+                                            <strong>Account</Strong><br>
+                                            <small class="small-text">Create Your Account As Hospital,Clinic or Pharmacy</small>
+                                        </div><br>
+                                    </a>
+                                    
+                                    <a href="#blog">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                            <div class="blk-icon">
+                                                <img src="/img/blog.png" alt="Account" height="100%" width="45%" style="margin-left:10%">
+                                            </div>
+                                            <strong>Blog</Strong><br>
+                                            <small class="small-text">Latest Blog about medical news,offers</small>
+                                        </div>
+                                    </a>
+                                    <!--link for the modal contribute -->
+                                        <a data-toggle="modal" href="#modal-contribute">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk">
+                                                <div class="blk-icon">
+                                                    <img src="/img/contribute.png" alt="Account" height="100%" width="45%">
+                                                </div>
+                                                <strong>Contribute</Strong><br>
+                                                <small class="small-text">Give Feedbacks and Better information</small>
+                                            </div>
+                                        </a>
+                                    <!--Div for the modal contribute -->
+                                    <div class="modal fade" id="modal-contribute">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" type="button" data-dismiss="modal" >&times;</button>
+                                                    <h4 class="modal-title">
+                                                        Hospitant || <a class="link2" href="/"><small class="sml-txt">Contribute</small></a>
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text" >
+                                                            <p class="modal-para3" style="padding:0%">
+                                                                Are u are interested to invest in our prototype?<br><br>
+                                                                <small class="inside-para3">Please Login or register in our system and view our all services.If u are really interested in funding this project, Please feel free to contact at:- 9803316647</small> 
+                                                            </p>
+                                                            
+                                                            <a href="/login"><button class="btn btn-primary active patient" >Login here</button></a>
+                                                            <a href="users/register-patient"><button class="btn btn-primary active patient" >Register as Patient</button></a>
+                                                    </div>
+                                                </div>
+                                                <!--div for the footer of the modal-->
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary bl-bt">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End of the modal contribute -->
+                                    <!--Link for the modal Teams -->
+                                        <a data-toggle="modal" href="#modal-team">
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk blk">
+                                                <div class="blk-icon">
+                                                    <img src="/img/teams.png" alt="Account" height="100%" width="45%">
+                                                </div>
+                                                <strong>Teams</Strong><br>
+                                                <small class="small-text">Our teams for this project</small>
+                                            </div>
+                                        </a>
+                                    <!--End of the link modal teams-->
+                                    
+                                    <!-- Modal div for the teams -->
+                                    <div class="modal fade" id="modal-team">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" type="button" data-dismiss="modal" >&times;</button>
+                                                    <h4 class="modal-title">
+                                                        Hospitant || <a class="link2" href="/"><small class="sml-txt">Teams</small></a>
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                            
+                                                </div>
+                                                <!--div for the footer of the modal-->
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary bl-bt">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End of the modal for the teams -->
+
+                                    <!--Link for the modal Contact -->
+                                        <a data-toggle="modal" href="#modal-contact">   
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 blk">
+                                                <div class="blk-icon">
+                                                    <img src="/img/contact_us2.png" alt="Account" height="100%" width="45%" style="margin-left:20%">
+                                                </div>
+                                                <strong>Contact us</Strong><br>
+                                                <small class="small-text">Contact us for more information</small>
+                                            </div>
+                                        </a>
+                                    <!--End of the link for modal Contact -->
+                                    
+                                    <!--Div for the modal contact -->
+                                    <div class="modal fade" id="modal-contact">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button class="close" type="button" data-dismiss="modal" >&times;</button>
+                                                    <h4 class="modal-title">
+                                                        Medix || <a class="link2" href="/"><small class="sml-txt">Contact Us</small></a>
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <% include ./partials/contact-us %>
+                                                </div>
+                                                <!--div for the footer of the modal-->
+                                                <div class="modal-footer">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary bl-bt">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End of the div modal contact -->
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
+</div>
+    <% include ./partials/footer %>
